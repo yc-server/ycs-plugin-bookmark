@@ -32,7 +32,7 @@ export class Controller {
         await this.model.remove(doc).exec();
         response(ctx, 204);
       } else {
-        const entity = await this.model.create(ctx.request.fields);
+        const entity = await this.model.create(doc);
         response(ctx, 201, entity);
       }
     } catch (e) {
